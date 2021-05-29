@@ -175,3 +175,5 @@ Vamos entender:
 		‘40’ – Número de repetições
 
 ```
+
+## Anotações em andamento...
