@@ -2,7 +2,7 @@
 
 Esse aquivo tem o objetivo de armazenar todo conhecimento obtido referente a linguagem de programação Python, já que **Massaru** e uma ‘anta’ e esquece tudo! Bom proveito!
 
-*OBS: Após a instalação do Python mais recente em um sistema Linux. Executar comandos abaixo no terminal.*
+**OBS: Após a instalação do Python mais recente em um sistema Linux. Executar comandos abaixo no terminal.**
 
 ```sh
 cd /opt
