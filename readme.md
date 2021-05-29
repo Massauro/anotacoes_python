@@ -105,7 +105,7 @@ qualquercoisa.istitle() - contem maiúsculas e minúsculas
 frase[9]
 ```
 
-* `frase[inicio:fim]` - Indica uma cadeia de caracters. Mas não inclui o ultimo valor.
+* `frase[inicio:fim]` - Indica uma cadeia de caracteres. Mas não inclui o ultimo valor.
 ```python
 frase[0:9]
 ```
