@@ -35,21 +35,21 @@ Esses comandos servem para instalação do PIP, gerenciador de extensões do Pyt
 
 ## Operadores aritméticos:
 
-x   +   y = Soma
+x + y = Soma
 
-x   -    y = Subtração
+x - y = Subtração
 
-x  *    y = Multiplicação 
+x * y = Multiplicação 
 
-x  **  y = Potencia
+x ** y = Potencia
 
-x  /     y = Divisão
+x / y = Divisão
 
-x  //    y = Divisão Inteira
+x // y = Divisão Inteira
 
-x  %   y = Módulo (resto da divisão)
+x % y = Módulo (resto da divisão)
 
-x  ** (1/y) = Raiz
+x ** (1/y) = Raiz
 
 ### Ordem de precedência:
 
