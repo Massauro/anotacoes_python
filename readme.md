@@ -72,6 +72,65 @@ x ** (1/y) = Raiz
 
 * **len(‘valor ou string’)** – verificar e retornar a quantidades de caracteres ou elementos do mesmo.
 
+* **time.sleep(valor_em_segundos)** - Função de tempo Python sleep() para adiar o segmento de chamada estiver em execução, você pode consultar o número de segundos por segundos parâmetros, ela representa o processo na pendência do tempo. OBS: `print("txt",`**flush=True**`)` resolve bug que faz sleep não funcionar.
+
+## O Módulo datetime em Python
+
+* `datetime.date` – Usada para representar apenas datas simples, com ano, mês e dia, sem informação de fuso horário.
+
+* `datetime.time` – Representa uma versão idealizada do tempo, onde cada dia sempre tem 86.400 segundos, no formato hora, minuto, segundo e microssegundo, além do fuso horário.
+
+* `datetime.datetime` – Combina os valores das classes date e time em um objeto só. Cuidado para não fazer confusão com o nome do módulo, que é o mesmo da classe.
+
+* `datetime.timedelta` – Usada em cálculos para expressar a diferença em dias entre dois objetos do tipo date, time ou datetime, com precisão de microssegundos.
+
+* `datetime.timezone` – É a implementação concreta de datetime.tzinfo, que contém a informação do fuso horário como um deslocamento fixo a partir do horário UTC. Como você viu, essa forma de representação fixa não ajuda muito quando você precisa lidar com mudanças no fuso horário, ou com o horário de verão.
+Você pode criar instâncias de objetos do tipo date, time ou datetime passando argumentos como dia, mês, ano, hora, minuto e segundo.
+
+Para combinar objetos date e time em um só objeto do tipo datetime, use o método `datetime.combine()`.
+
+```python
+dataSimples = date(year=2020, month=9, day=24)
+print(dataSimples)
+#  2020-09-24
+
+hora = time(hour=22, minute=10, second=30)
+print(hora)
+#  22:10:30
+
+data = datetime(year=2020, month=9, day=24, hour=22, minute=10, second=30)
+print(data)
+#  2020-09-24 22:10:30
+dataCompleta = datetime.combine(dataSimples, hora)
+print(dataCompleta)
+#  2020-09-24 22:10:30
+Code language: Python (python)
+Você pode omitir os nomes dos parâmetros, mas isso torna o seu código mais difícil de ler.
+
+data = datetime(2020, 9, 24, 22, 10, 30)
+print(data)
+#  2020-09-24 22:10:30
+Code language: Python (python)
+```
+
+Além disso, também é possível criar objetos date e datetime usando métodos úteis como today() e now(), ou a partir de um timestamp, ou seja, o inteiro que representa o número de segundos desde o início da Era Unix.
+
+```python
+data = date.today()
+print(data)
+#  2020-09-25
+
+data = datetime.now()
+print(data)
+#  2020-09-25 21:18:06.694389
+
+timestamp = 1600995600
+data = datetime.fromtimestamp(timestamp)
+print(data)
+#  2020-09-24 22:00:00
+```
+
+PS: Mais informações sobre datas em python, acesse <https://vaiprogramar.com/como-trabalhar-com-data-hora-python-datetime/> pois as informações desse paragrafo **'O Módulo datetime em Python'** foram tiradas de lá.
 
 ## Funções de ‘casting’ - Corversão
 * `int(‘texto ou variável’)` - Converte valor dentro de parênteses em inteiro
@@ -125,7 +184,7 @@ OBS3: Lembrando que toda `string` pode ser como uma lista de caracteres, sendo a
 
 * `frase.count(parâmetro_de_pesquisa, inicio_intervalo, fim_intervalo)` = conta o numero de vezes que o `parâmetro de pesquisa` se repete.
 
-* `frase.find('deo')` - Realiza a pesquisa em `frase` o parâmetro `deo` e indica o índice no qual começa o mesmo. OBS: Se a `string` não existe em `frase` ira retornar -1.
+* `frase.find('deo')` - Realiza a pesquisa em `frase` o parâmetro `deo` e indica o índice no qual começa o mesmo. OBS: Se a `string` não existe em `frase` ira retornar -1. OBS2: `frase.rfind()` e a mesma coisa mas realiza a pesquisa ao contrario.
 
 * `frase.index(valor_procurado, valor_deslocamento)` - Diz em qual posição se encontra o valor. 
 
@@ -142,6 +201,20 @@ OBS3: Lembrando que toda `string` pode ser como uma lista de caracteres, sendo a
 * `frase.capitalize()` - Deixa tudo minusculo menos a primeira letra.
 
 * `frase.title()` - Separa as palavras e deixa a primeira letra em maiúsculo.
+
+* `frase.strip()` - Remove espaços inúteis no começo e no final da string. OBS: `frase.rstrip()` e `frase.lstrip()` faz a mesma coisa em um dos lados sendo `rstrip` é direita e `lstrip` é esquerda.
+
+## Funções para divisão e junção
+
+* `frase.split(separador, máximo)` - Dividir as palavras usando `separador` como critério de separação e colocando em um lista.
+
+* `"criterio_de_junção".join(frase)` - Junta a lista separando pelo `"critério_de_junção`. **Ex:**
+
+```python
+teste = ['frase' ,'para' ,'teste']
+' '.join(teste)
+#resultado será 'teste = 'frase para teste'
+```
 
 
 
@@ -170,6 +243,10 @@ OBS3: Lembrando que toda `string` pode ser como uma lista de caracteres, sendo a
 * `random.randrang(inicio,final)` - sorte-a a faixa de inteiro
 
 * `random.uniform(inicio,final)` - sorte-a uma faixa de ponto flutuante (float)
+
+* `random.shuffle(string_ou_lista)` - embaralha `string_ou_lista`
+
+* `sorted(string_ou_lista)` - organiza `string_ou_lista` sendo numeradores em ordem crescente e letras em ordem alfabética. OBS: existem parametros extras como `key = lista_palavras_para_ordenar` e `reverse = True` que inverte a ordem.
 
 
 
