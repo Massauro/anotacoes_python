@@ -74,63 +74,7 @@ x ** (1/y) = Raiz
 
 * **time.sleep(valor_em_segundos)** - Função de tempo Python sleep() para adiar o segmento de chamada estiver em execução, você pode consultar o número de segundos por segundos parâmetros, ela representa o processo na pendência do tempo. OBS: `print("txt",`**flush=True**`)` resolve bug que faz sleep não funcionar.
 
-## O Módulo datetime em Python
-
-* `datetime.date` – Usada para representar apenas datas simples, com ano, mês e dia, sem informação de fuso horário.
-
-* `datetime.time` – Representa uma versão idealizada do tempo, onde cada dia sempre tem 86.400 segundos, no formato hora, minuto, segundo e microssegundo, além do fuso horário.
-
-* `datetime.datetime` – Combina os valores das classes date e time em um objeto só. Cuidado para não fazer confusão com o nome do módulo, que é o mesmo da classe.
-
-* `datetime.timedelta` – Usada em cálculos para expressar a diferença em dias entre dois objetos do tipo date, time ou datetime, com precisão de microssegundos.
-
-* `datetime.timezone` – É a implementação concreta de datetime.tzinfo, que contém a informação do fuso horário como um deslocamento fixo a partir do horário UTC. Como você viu, essa forma de representação fixa não ajuda muito quando você precisa lidar com mudanças no fuso horário, ou com o horário de verão.
-Você pode criar instâncias de objetos do tipo date, time ou datetime passando argumentos como dia, mês, ano, hora, minuto e segundo.
-
-Para combinar objetos date e time em um só objeto do tipo datetime, use o método `datetime.combine()`.
-
-```python
-dataSimples = date(year=2020, month=9, day=24)
-print(dataSimples)
-#  2020-09-24
-
-hora = time(hour=22, minute=10, second=30)
-print(hora)
-#  22:10:30
-
-data = datetime(year=2020, month=9, day=24, hour=22, minute=10, second=30)
-print(data)
-#  2020-09-24 22:10:30
-dataCompleta = datetime.combine(dataSimples, hora)
-print(dataCompleta)
-#  2020-09-24 22:10:30
-Code language: Python (python)
-Você pode omitir os nomes dos parâmetros, mas isso torna o seu código mais difícil de ler.
-
-data = datetime(2020, 9, 24, 22, 10, 30)
-print(data)
-#  2020-09-24 22:10:30
-Code language: Python (python)
-```
-
-Além disso, também é possível criar objetos date e datetime usando métodos úteis como today() e now(), ou a partir de um timestamp, ou seja, o inteiro que representa o número de segundos desde o início da Era Unix.
-
-```python
-data = date.today()
-print(data)
-#  2020-09-25
-
-data = datetime.now()
-print(data)
-#  2020-09-25 21:18:06.694389
-
-timestamp = 1600995600
-data = datetime.fromtimestamp(timestamp)
-print(data)
-#  2020-09-24 22:00:00
-```
-
-PS: Mais informações sobre datas em python, acesse <https://vaiprogramar.com/como-trabalhar-com-data-hora-python-datetime/> pois as informações desse paragrafo **'O Módulo datetime em Python'** foram tiradas de lá.
+* **range(inicio,fim,intervalo)** - cria uma lista de contagem numérica. OBS: `range(10,-1,-1)` faz contagem regressiva.
 
 ## Funções de ‘casting’ - Corversão
 * `int(‘texto ou variável’)` - Converte valor dentro de parênteses em inteiro
@@ -138,6 +82,14 @@ PS: Mais informações sobre datas em python, acesse <https://vaiprogramar.com/c
 * `float(‘texto ou variável’)` - Converte valor dentro de parênteses em float ou ponto flutuante (numero real)
 
 * `str(‘texto ou variável’)` - Converte valor dentro de parênteses em string ou conjunto de caracteres (‘palavras entendíveis’)
+
+### conversão de numeros
+
+* `bin(numero)` → converter numero em binário
+
+* `oct(numero)` → converter numero em octal
+
+* `hex(numero)` → converter numero em hexadecimal
 
 
 ## Funções de verificação -  ‘verifica se os dados da variável(qualquercoisa) é…’
@@ -274,6 +226,118 @@ Vamos entender:
 		‘^’ - Formatação ( ^ - centralizado / > - alinhado à direita / < - alinhado à esquerda)
 
 		‘40’ – Número de repetições
+
+```
+
+## O Módulo datetime em Python
+
+* `datetime.date` – Usada para representar apenas datas simples, com ano, mês e dia, sem informação de fuso horário.
+
+* `datetime.time` – Representa uma versão idealizada do tempo, onde cada dia sempre tem 86.400 segundos, no formato hora, minuto, segundo e microssegundo, além do fuso horário.
+
+* `datetime.datetime` – Combina os valores das classes date e time em um objeto só. Cuidado para não fazer confusão com o nome do módulo, que é o mesmo da classe.
+
+* `datetime.timedelta` – Usada em cálculos para expressar a diferença em dias entre dois objetos do tipo date, time ou datetime, com precisão de microssegundos.
+
+* `datetime.timezone` – É a implementação concreta de datetime.tzinfo, que contém a informação do fuso horário como um deslocamento fixo a partir do horário UTC. Como você viu, essa forma de representação fixa não ajuda muito quando você precisa lidar com mudanças no fuso horário, ou com o horário de verão.
+Você pode criar instâncias de objetos do tipo date, time ou datetime passando argumentos como dia, mês, ano, hora, minuto e segundo.
+
+Para combinar objetos date e time em um só objeto do tipo datetime, use o método `datetime.combine()`.
+
+```python
+dataSimples = date(year=2020, month=9, day=24)
+print(dataSimples)
+#  2020-09-24
+
+hora = time(hour=22, minute=10, second=30)
+print(hora)
+#  22:10:30
+
+data = datetime(year=2020, month=9, day=24, hour=22, minute=10, second=30)
+print(data)
+#  2020-09-24 22:10:30
+dataCompleta = datetime.combine(dataSimples, hora)
+print(dataCompleta)
+#  2020-09-24 22:10:30
+Code language: Python (python)
+```
+
+Você pode omitir os nomes dos parâmetros, mas isso torna o seu código mais difícil de ler.
+
+```python
+data = datetime(2020, 9, 24, 22, 10, 30)
+print(data)
+#  2020-09-24 22:10:30
+Code language: Python (python)
+```
+
+Além disso, também é possível criar objetos date e datetime usando métodos úteis como today() e now(), ou a partir de um timestamp, ou seja, o inteiro que representa o número de segundos desde o início da Era Unix.
+
+```python
+data = date.today()
+print(data)
+#  2020-09-25
+
+data = datetime.now()
+print(data)
+#  2020-09-25 21:18:06.694389
+
+timestamp = 1600995600
+data = datetime.fromtimestamp(timestamp)
+print(data)
+#  2020-09-24 22:00:00
+```
+
+PS: Mais informações sobre datas em python, acesse <https://vaiprogramar.com/como-trabalhar-com-data-hora-python-datetime/> pois as informações desse paragrafo **'O Módulo datetime em Python'** foram tiradas de lá.
+
+## Estruturas de repetição
+
+### Estrutura 'For'
+
+```python
+for variavel_armazenha_valor in range(0,3):
+	print(alguma_coisa)
+# Estruta de repetição com limite
+
+```
+
+### Estrutura 'While'
+
+```python
+while condicao:
+	print(alguma_coisa)
+# Estrutura de repetição limitada por uma condição
+
+while True:
+	break
+# Estrutura de repetição limitada por uma função 'break'
+
+```
+
+### Funções logicas e uteis
+
+* `break` - para estrutura de repetição
+
+* `continue` - para o laço mas continua a estrutura
+
+* `in` - está / Ex:`x in y`
+
+* `not in` - não esta / Ex:`x not in Y`
+
+* `or` - ou / Ex:`condicao or condicao`
+
+* `and` - & / Ex:`condicao and condicao`
+
+### Calculos por ele mesmo
+
+```python
+
+a -= b # a = a - b
+a += b # a = a + b
+a /= b # a = a / b
+a *= b # a = a * b
+a **= b # a = a ** b
+
 
 ```
 
