@@ -100,7 +100,7 @@ qualquercoisa.istitle() - contem maiúsculas e minúsculas
 
 ## Funções de manipulação de texto
 
-* `frase[indice]` - indica a fosição de um caracter **EX:**
+* `frase[indice]` - indica a posição de um carácter **EX:**
 ```python
 frase[9]
 ```
@@ -121,17 +121,41 @@ OBS2: `frase[::-1]` → Inverte os elementos
 
 OBS3: Lembrando que toda `string` pode ser como uma lista de caracteres, sendo assim todas essas funções de manipulação podem ser feitas em uma `list` e `tuple`.
 
+## Funções para analise
+
+* `frase.count(parâmetro_de_pesquisa, inicio_intervalo, fim_intervalo)` = conta o numero de vezes que o `parâmetro de pesquisa` se repete.
+
+* `frase.find('deo')` - Realiza a pesquisa em `frase` o parâmetro `deo` e indica o índice no qual começa o mesmo. OBS: Se a `string` não existe em `frase` ira retornar -1.
+
+* `frase.index(valor_procurado, valor_deslocamento)` - Diz em qual posição se encontra o valor. 
+
+## Funções para transformação
+
+* `frase.center(quantidade_de_caracteres)` - Deixar `frase` centralizado.
+
+* `frase.replace(valor_substituição, valor_substituído)` - Substituir os parâmetros em `frase`.
+
+* `frase.upper()` - Deixar tudo maiúsculo.
+
+* `frase.lower()` - Deixar tudo em minusculo.
+
+* `frase.capitalize()` - Deixa tudo minusculo menos a primeira letra.
+
+* `frase.title()` - Separa as palavras e deixa a primeira letra em maiúsculo.
+
+
+
 ## Importação de biblioteca ‘Math’ - Lista de funções
 
-	* `import math` – importando biblioteca math (import = importar / math = biblioteca)
+* `import math` – importando biblioteca math (import = importar / math = biblioteca)
 
-	* `math.trunc(valor)` – corta a parte inteira
- 
-	* `math.hypot(valor)` – calculo de hipotenusa
+* `math.trunc(valor)` – corta a parte inteira
 
-	* `math.radians(valor)` – calcula de radiano
+* `math.hypot(valor)` – calculo de hipotenusa
 
-	* `math.cos(valor_em_radiano)` – calculo de cosseno
+* `math.radians(valor)` – calcula de radiano
+
+* `math.cos(valor_em_radiano)` – calculo de cosseno
 
 ## Importação da biblioteca 'random' - Lista de funções
 
